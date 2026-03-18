@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const typingTextElement = document.getElementById('typing-text');
     // Ensure this element exists before trying to manipulate it
     if (typingTextElement) {
-        const roles = ['Frontend Developer', 'Backend Developer', 'Full-Stack Developer'];
+        const roles = ['Frontend Developer', 'Backend Developer', 'Full-Stack Developer', 'Freelancer'];
         let roleIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
