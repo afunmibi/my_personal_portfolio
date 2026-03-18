@@ -384,6 +384,18 @@ textarea:focus-visible {
     object-fit: cover;
 }
 
+.projects-page-intro {
+    margin-top: .8rem;
+    color: var(--muted);
+    max-width: 75ch;
+}
+
+.view-more-wrap {
+    margin-top: 1.25rem;
+    display: flex;
+    justify-content: center;
+}
+
 .mentoring-intro {
     margin-top: .85rem;
     color: var(--muted);
