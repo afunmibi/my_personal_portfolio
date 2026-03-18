@@ -12,7 +12,7 @@ window.onscroll = () => {
 // Typing Text Animation Code
 
 const typed = new Typed('.multiple-text', {
-    strings: ['Frontend Development', 'Backend Development', 'Full Stack Development', 'Wordpress Designer'],
+    strings: ['Frontend Developer (HTML,CSS,JS & React.JS)', 'Backend Developer (PHP & MYSQL)', 'Full Stack Developer', 'Wordpress Designer'],
     typeSpeed: 60,
     backSpeed: 60,
     backDelay: 1000,
