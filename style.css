@@ -1,0 +1,409 @@
+/* Base Styles (for larger screens first, mobile styles will override or adjust) */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --dark-color: #343a40;
+    --light-color: #f8f9fa;
+    --white-color: #ffffff;
+    --text-color: #333;
+    --heading-color: #222;
+    --gradient-start: #007bff;
+    --gradient-end: #0056b3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Header & Navbar */
+header {
+    background: var(--dark-color);
+    color: var(--white-color);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem; /* Add padding for smaller screens */
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--white-color);
+}
+
+.logo span {
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex; /* Display as row on larger screens */
+    gap: 1.5rem;
+}
+
+.nav-links li a {
+    color: var(--white-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: var(--primary-color);
+}
+
+.cvbtn {
+    background: var(--primary-color);
+    color: var(--white-color);
+    padding: 0.7rem 1.5rem;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cvbtn:hover {
+    background: var(--gradient-end);
+}
+
+.hamburger-menu {
+    display: none; /* Hidden on large screens */
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--white-color);
+}
+
+.header-social-icons {
+    display: flex; /* Hidden on large screens by default */
+    gap: 1rem;
+}
+
+.header-social-icons a {
+    color: var(--white-color);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.header-social-icons a:hover {
+    color: var(--primary-color);
+}
+
+
+/* Hero Section */
+.hero-container {
+    display: flex;
+    flex-direction: row; /* Default for larger screens */
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-image img {
+    border-radius: 50%;
+    width: 300px; /* Adjust as needed */
+    height: 300px; /* Adjust as needed */
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.4);
+}
+
+.hero-content {
+    flex: 1;
+    text-align: left;
+}
+
+.hero-content h3 {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    color: var(--heading-color);
+    margin-bottom: 1rem;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    color: var(--heading-color);
+    margin-bottom: 1.5rem;
+}
+
+.hero-content h2 span {
+    color: var(--primary-color);
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.social-icons a {
+    font-size: 2rem;
+    color: var(--dark-color);
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--primary-color);
+}
+
+.hero-btn {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.btn {
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+    color: var(--white-color);
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
+}
+
+/* Stats Section */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 3rem 2rem;
+    background-color: var(--light-color);
+    text-align: center;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    gap: 2rem; /* Gap between stat items */
+}
+
+.stat {
+    flex: 1;
+    min-width: 150px; /* Ensure stats don't get too small */
+    padding: 1rem;
+    background-color: var(--white-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.stat:hover {
+    transform: translateY(-5px);
+}
+
+.stat h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.stat span {
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.4;
+}
+
+/* --- Media Queries --- */
+
+/* For screens smaller than 992px (typical for tablets and smaller desktops) */
+@media (max-width: 992px) {
+    .navbar {
+        padding: 0 1.5rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .cvbtn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .hero-container {
+        flex-direction: column; /* Stack image and content vertically */
+        text-align: center; /* Center text for stacked layout */
+        padding: 3rem 1.5rem;
+    }
+
+    .hero-image {
+        margin-bottom: 2rem;
+    }
+
+    .hero-content {
+        text-align: center; /* Center text for stacked layout */
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .social-icons {
+        justify-content: center; /* Center social icons */
+    }
+
+    .hero-btn {
+        justify-content: center; /* Center buttons */
+    }
+
+    .stats {
+        flex-direction: column; /* Stack stats vertically */
+        padding: 2rem 1.5rem;
+    }
+
+    .stat {
+        width: 100%; /* Make stats take full width */
+        max-width: 300px; /* Limit max width for better appearance */
+    }
+}
+
+/* For screens smaller than 768px (typical for larger phones and tablets) */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide navigation links by default */
+        flex-direction: column; /* Stack links vertically when shown */
+        background: var(--dark-color);
+        position: absolute;
+        top: 60px; /* Adjust based on header height */
+        left: 0;
+        width: 100%;
+        padding: 1rem 0;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-links.active {
+        display: flex; /* Show navigation links when active */
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+    }
+
+    .hamburger-menu {
+        display: block; /* Show hamburger icon */
+    }
+
+    .cvbtn {
+        display: none; /* Hide CV button on smaller screens */
+    }
+
+    .header-social-icons {
+        display: none; /* Hidden on smaller screens (can be shown if desired in mobile menu) */
+    }
+
+    .navbar {
+        padding: 0 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .hero-btn {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 1rem;
+    }
+
+    .btn {
+        width: 100%; /* Make buttons full width */
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+/* For screens smaller than 480px (typical for most phones) */
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.8rem;
+    }
+
+    .hero-container {
+        padding: 2rem 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero-image img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .social-icons a {
+        font-size: 1.8rem;
+    }
+
+    .stat h2 {
+        font-size: 2rem;
+    }
+}
