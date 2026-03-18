@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const typingTextElement = document.getElementById('typing-text');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const siteHeader = document.querySelector('.site-header');
+    const scrollUpButton = document.querySelector('.scroll-up');
 
     if (typingTextElement) {
         const roles = [
@@ -63,12 +65,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const closeMenu = () => {
             navLinks.classList.remove('active');
             hamburgerMenu.setAttribute('aria-expanded', 'false');
+            hamburgerMenu.setAttribute('aria-label', 'Open menu');
             document.body.classList.remove('menu-open');
         };
 
         hamburgerMenu.addEventListener('click', () => {
             const isOpen = navLinks.classList.toggle('active');
             hamburgerMenu.setAttribute('aria-expanded', String(isOpen));
+            hamburgerMenu.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
             document.body.classList.toggle('menu-open', isOpen);
         });
 
@@ -101,6 +105,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const syncHeaderState = () => {
+        if (!siteHeader) return;
+        siteHeader.classList.toggle('scrolled', window.scrollY > 10);
+    };
+
+    const syncScrollUpState = () => {
+        if (!scrollUpButton) return;
+        scrollUpButton.classList.toggle('is-visible', window.scrollY > 420);
+    };
+
+    syncHeaderState();
+    syncScrollUpState();
+    window.addEventListener('scroll', syncHeaderState, { passive: true });
+    window.addEventListener('scroll', syncScrollUpState, { passive: true });
+
+    if (scrollUpButton) {
+        scrollUpButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: reducedMotion ? 'auto' : 'smooth'
+            });
+        });
+    }
+
     const sections = document.querySelectorAll('section[id]');
 
     const setActiveNav = () => {
@@ -126,6 +154,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const year = document.getElementById('year');
     if (year) {
         year.textContent = new Date().getFullYear();
+    }
+
+    const revealElements = document.querySelectorAll('.reveal');
+
+    if (reducedMotion) {
+        revealElements.forEach((element) => {
+            element.classList.add('is-visible');
+        });
+    } else if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            });
+        }, {
+            threshold: 0.18,
+            rootMargin: '0px 0px -30px 0px'
+        });
+
+        revealElements.forEach((element) => {
+            revealObserver.observe(element);
+        });
+    } else {
+        revealElements.forEach((element) => {
+            element.classList.add('is-visible');
+        });
     }
 
     const mentoringImages = document.querySelectorAll('.mentoring-card img[data-fallback-src]');

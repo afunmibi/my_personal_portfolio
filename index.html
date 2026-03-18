@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Felix Adewale | Full-Stack Developer</title>
     <meta name="description" content="Portfolio of Felix Adewale, a full-stack developer building scalable web products across healthcare, commerce, and operations.">
+    <meta name="theme-color" content="#f4efe7">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -13,7 +14,9 @@
     <link rel="stylesheet" href="animation.css">
     <script src="app.js" defer></script>
 </head>
-<body>
+<body class="home-page">
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
     <header class="site-header">
         <nav class="navbar container">
             <a href="#home" class="logo" style="--i: 1">Felix <span>Adewale</span></a>
@@ -31,16 +34,16 @@
                 <li><a href="#contact" style="--i: 7">Contact</a></li>
             </ul>
 
-            <a href="assets/cv/Felix-Adewale-CV.docx" target="_blank" rel="noopener" class="cvbtn" style="--i: 7">
+            <a href="assets/cv/Felix-Adewale-CV.docx" target="_blank" rel="noopener" download class="cvbtn" style="--i: 7">
                 CV <i class="fa-solid fa-download"></i>
             </a>
         </nav>
     </header>
 
-    <main>
+    <main id="main-content">
         <section id="home" class="hero container">
             <div class="hero-image hero-image-animation reveal" style="--delay: .1s">
-                <img src="assets/images/felix.jpg" alt="Portrait of Felix Adewale">
+                <img src="assets/images/felix.jpg" alt="Portrait of Felix Adewale" decoding="async">
             </div>
 
             <div class="hero-content hero-content-animation">
@@ -51,16 +54,23 @@
                     I design and ship database-driven applications across healthcare, operations, education, and e-commerce with a focus on performance, clean APIs, and maintainable code.
                 </p>
 
+                <ul class="hero-highlights reveal" style="--delay: .55s">
+                    <li>Laravel and PHP product engineering</li>
+                    <li>React interfaces teams can maintain</li>
+                    <li>Operations and healthcare workflow systems</li>
+                    <li>API integration, reporting, and deployment support</li>
+                </ul>
+
                 <div class="social-icons reveal" style="--delay: .6s">
                     <a href="mailto:afunmibi@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
                     <a href="https://github.com/afunmibi" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="projects.html" aria-label="Browse projects"><i class="fa-solid fa-folder-open"></i></a>
                 </div>
 
                 <div class="hero-btn reveal" style="--delay: .7s">
                     <a href="#portfolio" class="btn">View Projects</a>
-                    <a href="#contact" class="btn btn-outline">Hire Me</a>
-                    <a href="https://github.com/afunmibi" target="_blank" rel="noopener" class="btn btn-outline">GitHub Repo</a>
+                    <a href="#contact" class="btn btn-outline">Start a Conversation</a>
+                    <a href="assets/cv/Felix-Adewale-CV.docx" target="_blank" rel="noopener" download class="btn btn-outline">Download CV</a>
                 </div>
             </div>
         </section>
@@ -80,16 +90,34 @@
             </article>
             <article class="stat">
                 <h3>100+</h3>
-                <p>Happy Users</p>
+                <p>Business Workflows Supported</p>
             </article>
         </section>
 
         <section id="about" class="section container reveal" style="--delay: .1s">
             <h2>About Me</h2>
-            <p>
-                I am <strong>Felix Adewale</strong>, a full-stack developer with strong experience in Laravel, React, PHP, JavaScript, MySQL, and API-driven platforms.
-                I focus on business systems that need dependable performance and clear workflows, especially in healthcare and operations-heavy environments.
-            </p>
+            <div class="about-grid">
+                <div class="about-copy">
+                    <p>
+                        I am <strong>Felix Adewale</strong>, a full-stack developer with strong experience in Laravel, React, PHP, JavaScript, MySQL, and API-driven platforms.
+                        I focus on business systems that need dependable performance and clear workflows, especially in healthcare and operations-heavy environments.
+                    </p>
+                    <p>
+                        My best work sits at the point where product thinking meets execution: turning messy manual processes into stable software that teams can trust every day.
+                    </p>
+                </div>
+
+                <div class="about-points">
+                    <article class="info-card">
+                        <h3>What I Deliver</h3>
+                        <p>Admin dashboards, reporting tools, secure authentication flows, API integrations, and maintainable back-office products.</p>
+                    </article>
+                    <article class="info-card">
+                        <h3>How I Work</h3>
+                        <p>Clear communication, pragmatic architecture, clean database design, and codebases that stay understandable after launch.</p>
+                    </article>
+                </div>
+            </div>
         </section>
 
         <section id="skills" class="section section-muted reveal" style="--delay: .1s">
@@ -104,6 +132,8 @@
                     <div class="skill"><i class="fa-brands fa-css3-alt"></i> CSS, Tailwind, Bootstrap</div>
                     <div class="skill"><i class="fa-solid fa-file-pdf"></i> PDF + Excel Reporting</div>
                     <div class="skill"><i class="fa-solid fa-server"></i> Deployment + Maintenance</div>
+                    <div class="skill"><i class="fa-solid fa-robot"></i> Agentic Coding Tools + CLI: OpenAI Codex, GitHub Copilot, Opencode CLI, Google Antigravity, Kilo Code</div>
+                    <div class="skill"><i class="fa-solid fa-brain"></i> AI Assistants: ChatGPT, Claude AI, Gemini, Grok, Meta AI</div>
                 </div>
             </div>
         </section>
@@ -112,85 +142,91 @@
             <h2>Selected Projects</h2>
             <div class="portfolio-grid">
                 <article class="project-card reveal" style="--delay: .1s">
-                    <img src="assets/images/nonsuch20261.png" alt="HMO ERP system dashboard preview">
+                    <img src="assets/images/nonsuch20261.png" alt="HMO ERP system dashboard preview" loading="lazy" decoding="async">
                     <div class="project-body">
                         <h3>HMO ERP System</h3>
                         <p>Healthcare ERP workflows connecting operations, finance, and records in one platform.</p>
                         <p class="tech">Laravel, Blade, Tailwind</p>
-                        <video controls preload="metadata">
+                        <video controls preload="metadata" playsinline>
                             <source src="assets/videos/laravel_hmo.mp4" type="video/mp4">
                         </video>
                     </div>
                 </article>
 
                 <article class="project-card reveal" style="--delay: .2s">
-                    <img src="assets/images/hmo.png" alt="HMO healthcare portal preview">
+                    <img src="assets/images/hmo.png" alt="HMO healthcare portal preview" loading="lazy" decoding="async">
                     <div class="project-body">
                         <h3>HMO Healthcare Portal</h3>
                         <p>Claims vetting and tariff workflows built for healthcare provider operations.</p>
                         <p class="tech">PHP, MySQL, JavaScript</p>
-                        <video controls preload="metadata">
+                        <video controls preload="metadata" playsinline>
                             <source src="assets/videos/Nonsuch portal demo.mp4" type="video/mp4">
                         </video>
                     </div>
                 </article>
 
-              
-
                 <article class="project-card reveal" style="--delay: .4s">
-                    <img src="assets/images/artisan/artisan2.png" alt="Artisan and Customers system preview">
+                    <img src="assets/images/artisan/artisan2.png" alt="Artisan and Customers system preview" loading="lazy" decoding="async">
                     <div class="project-body">
                         <h3>Artisan and Customers</h3>
-                        <p>This platform connects artisans with customers, facilitating project management and communication.</p>
+                        <p>This platform connects artisans with customers, supporting discovery, job coordination, and smoother communication.</p>
                         <p class="tech">React, Laravel, Tailwind, Bootstrap</p>
-                        <video controls preload="metadata">
-                            <source src="assets/videos/" type="video/mp4">
-                        </video>
+                        <p class="project-note">Private walkthrough available on request.</p>
                     </div>
                 </article>
+            </div>
 
-                
             <div class="view-more-wrap reveal" style="--delay: .7s">
                 <a href="projects.html" class="btn">View More Projects</a>
+            </div>
+        </section>
+
+        <section id="project-demos" class="section section-muted">
+            <div class="container">
+                <h2 class="reveal" style="--delay: .1s">Project Demo Images at Nonsuch Medicare Limited</h2>
+                <p class="section-intro reveal" style="--delay: .15s">
+                    A quick visual walkthrough of product demos, interface reviews, and live feature screens from my work at Nonsuch Medicare Limited.
+                </p>
+
+                <div class="demo-gallery">
+                    <figure class="demo-card reveal" style="--delay: .2s">
+                        <img src="assets/Project_demo_pictures/onesegment.jpeg" alt="Project demo screenshot 1" loading="lazy" decoding="async">
+                    </figure>
+                    <figure class="demo-card reveal" style="--delay: .25s">
+                        <img src="assets/Project_demo_pictures/answeringquestions.jpeg" alt="Project demo screenshot 2" loading="lazy" decoding="async">
+                    </figure>
+                    <figure class="demo-card reveal" style="--delay: .3s">
+                        <img src="assets/Project_demo_pictures/anothersegment.jpeg" alt="Project demo screenshot 3" loading="lazy" decoding="async">
+                    </figure>
+                </div>
             </div>
         </section>
 
         <section id="mentoring" class="section container">
             <h2>Leadership & Mentoring Gallery</h2>
             <p class="mentoring-intro">
-                Highlights from sessions where I trained and mentored frontend developers. Replace these image files with your own mentoring photos anytime.
+                Highlights from sessions where I trained and mentored frontend developers, combining technical guidance with hands-on project support.
             </p>
 
             <div class="mentoring-grid">
                 <figure class="mentoring-card reveal" style="--delay: .1s">
-                    <img src="assets/mentoring_and_leadership_positions/combinedclass.jpeg" data-fallback-src="assets/images/felix.jpg" alt="Frontend mentoring session with developers">
+                    <img src="assets/mentoring_and_leadership_positions/combinedclass.jpeg" data-fallback-src="assets/images/felix.jpg" alt="Frontend mentoring session with developers" loading="lazy" decoding="async">
                     <figcaption>Frontend Mentoring Class</figcaption>
                 </figure>
 
                 <figure class="mentoring-card reveal" style="--delay: .2s">
-                    <img src="assets/mentoring_and_leadership_positions/teaching_gith222.jpeg" data-fallback-src="assets/images/felix.jpg" alt="Hands-on leadership and code review session">
+                    <img src="assets/mentoring_and_leadership_positions/teaching_gith222.jpeg" data-fallback-src="assets/images/felix.jpg" alt="Hands-on leadership and code review session" loading="lazy" decoding="async">
                     <figcaption>Hands-on Code Review Session with first set of student @ Tedprime</figcaption>
                 </figure>
 
                 <figure class="mentoring-card reveal" style="--delay: .3s">
-                    <img src="assets/mentoring_and_leadership_positions/intheclass.jpeg" data-fallback-src="assets/images/felix.jpg" alt="Teaching modern frontend architecture">
+                    <img src="assets/mentoring_and_leadership_positions/intheclass.jpeg" data-fallback-src="assets/images/felix.jpg" alt="Teaching modern frontend architecture" loading="lazy" decoding="async">
                     <figcaption>Teaching Frontend Architecture</figcaption>
                 </figure>
+            </div>
 
-                <figure class="mentoring-card reveal" style="--delay: .4s">
-                    <img src="assets/mentoring_and_leadership_positions/intheclass2withall.jpeg" data-fallback-src="assets/images/felix.jpg" alt="Mentoring developers on responsive UI implementation">
-                    <figcaption>Responsive UI Mentorship</figcaption>
-                </figure>
-
-                <figure class="mentoring-card reveal" style="--delay: .5s">
-                    <img src="assets/mentoring_and_leadership_positions/explained_github_git.jpeg" data-fallback-src="assets/images/felix.jpg" alt="Leadership session for frontend growth">
-                    <figcaption>Leadership Session</figcaption>
-                </figure>
-
-                <figure class="mentoring-card reveal" style="--delay: .6s">
-                    <img src="assets/mentoring_and_leadership_positions/graduating_students_with_me.jpeg" data-fallback-src="assets/images/felix.jpg" alt="Frontend developers training workshop">
-                    <figcaption>Fourth graduating students</figcaption>
-                </figure>
+            <div class="view-more-wrap reveal" style="--delay: .4s">
+                <a href="mentoring.html" class="btn btn-outline">View More Mentoring Photos</a>
             </div>
         </section>
 
@@ -198,6 +234,30 @@
             <div class="container contact-wrap reveal" style="--delay: .15s">
                 <h2>Contact Me</h2>
                 <p>Have a project or role in mind? Send a message and I will respond.</p>
+
+                <div class="contact-methods">
+                    <a class="info-card contact-card" href="mailto:afunmibi@gmail.com">
+                        <span class="contact-icon"><i class="fa-solid fa-envelope"></i></span>
+                        <span>
+                            <strong>Email</strong>
+                            <small>afunmibi@gmail.com</small>
+                        </span>
+                    </a>
+                    <a class="info-card contact-card" href="https://github.com/afunmibi" target="_blank" rel="noopener">
+                        <span class="contact-icon"><i class="fa-brands fa-github"></i></span>
+                        <span>
+                            <strong>GitHub</strong>
+                            <small>github.com/afunmibi</small>
+                        </span>
+                    </a>
+                    <a class="info-card contact-card" href="assets/cv/Felix-Adewale-CV.docx" target="_blank" rel="noopener" download>
+                        <span class="contact-icon"><i class="fa-solid fa-file-arrow-down"></i></span>
+                        <span>
+                            <strong>Curriculum Vitae</strong>
+                            <small>Download the latest version</small>
+                        </span>
+                    </a>
+                </div>
 
                 <form action="https://formspree.io/f/mpwyodkz" method="POST" class="contact-form">
                     <input type="text" name="name" placeholder="Your Name" required>
@@ -212,5 +272,9 @@
     <footer class="footer">
         <p>Felix Adewale <span id="year"></span>. All rights reserved.</p>
     </footer>
+
+    <button class="scroll-up" type="button" aria-label="Scroll to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
 </body>
 </html>
