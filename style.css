@@ -384,6 +384,44 @@ textarea:focus-visible {
     object-fit: cover;
 }
 
+.mentoring-intro {
+    margin-top: .85rem;
+    color: var(--muted);
+    max-width: 74ch;
+}
+
+.mentoring-grid {
+    margin-top: 1.3rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.mentoring-card {
+    background: var(--card);
+    border: 1px solid var(--stroke);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(40, 35, 27, 0.07);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.mentoring-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 32px rgba(40, 35, 27, 0.11);
+}
+
+.mentoring-card img {
+    height: 220px;
+    object-fit: cover;
+}
+
+.mentoring-card figcaption {
+    padding: .85rem .95rem;
+    font-size: .92rem;
+    color: var(--muted);
+}
+
 .contact-wrap {
     max-width: 760px;
 }
@@ -431,7 +469,8 @@ textarea:focus-visible {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    .portfolio-grid {
+    .portfolio-grid,
+    .mentoring-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
@@ -502,7 +541,8 @@ textarea:focus-visible {
 
     .stats,
     .skills-grid,
-    .portfolio-grid {
+    .portfolio-grid,
+    .mentoring-grid {
         grid-template-columns: 1fr;
     }
 
@@ -557,7 +597,8 @@ textarea:focus-visible {
         --container: 1280px;
     }
 
-    .portfolio-grid {
+    .portfolio-grid,
+    .mentoring-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 1.2rem;
     }
@@ -565,6 +606,7 @@ textarea:focus-visible {
 
 @media (hover: none) {
     .project-card:hover,
+    .mentoring-card:hover,
     .btn:hover,
     .social-icons a:hover,
     .cvbtn:hover {

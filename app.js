@@ -127,4 +127,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (year) {
         year.textContent = new Date().getFullYear();
     }
+
+    const mentoringImages = document.querySelectorAll('.mentoring-card img[data-fallback-src]');
+    mentoringImages.forEach((image) => {
+        image.addEventListener('error', () => {
+            if (image.dataset.fallbackApplied === 'true') return;
+
+            image.dataset.fallbackApplied = 'true';
+            image.src = image.dataset.fallbackSrc;
+        });
+    });
 });
