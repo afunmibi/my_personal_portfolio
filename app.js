@@ -1,62 +1,130 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // --- Typing text effect ---
+document.addEventListener('DOMContentLoaded', () => {
     const typingTextElement = document.getElementById('typing-text');
-    // Ensure this element exists before trying to manipulate it
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     if (typingTextElement) {
-        const roles = ['Frontend Developer', 'Backend Developer', 'Full-Stack Developer', 'Freelancer'];
-        let roleIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        const typingSpeed = 150; // Milliseconds per character for typing
-        const deletingSpeed = 100; // Milliseconds per character for deleting
-        const delayBetweenRoles = 2000; // Milliseconds before typing the next role
+        const roles = [
+            'scalable Laravel backends',
+            'clean React interfaces',
+            'API-first business systems',
+            'reliable full-stack products'
+        ];
 
-        function type() {
-            const currentRole = roles[roleIndex];
-            if (isDeleting) {
-                typingTextElement.textContent = currentRole.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typingTextElement.textContent = currentRole.substring(0, charIndex + 1);
-                charIndex++;
-            }
+        if (reducedMotion) {
+            typingTextElement.textContent = roles[0];
+        } else {
+            let roleIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
 
-            let currentTypingSpeed = isDeleting ? deletingSpeed : typingSpeed;
+            const typeSpeed = 70;
+            const deleteSpeed = 45;
+            const pauseAtEnd = 1200;
 
-            if (!isDeleting && charIndex === currentRole.length) {
-                currentTypingSpeed = delayBetweenRoles;
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                roleIndex = (roleIndex + 1) % roles.length; // Cycle through roles
-                currentTypingSpeed = typingSpeed;
-            }
+            const type = () => {
+                const currentRole = roles[roleIndex];
+                typingTextElement.textContent = currentRole.slice(0, charIndex);
 
-            setTimeout(type, currentTypingSpeed);
+                if (!isDeleting) {
+                    charIndex += 1;
+
+                    if (charIndex > currentRole.length) {
+                        isDeleting = true;
+                        setTimeout(type, pauseAtEnd);
+                        return;
+                    }
+
+                    setTimeout(type, typeSpeed);
+                    return;
+                }
+
+                charIndex -= 1;
+
+                if (charIndex < 0) {
+                    isDeleting = false;
+                    roleIndex = (roleIndex + 1) % roles.length;
+                    charIndex = 0;
+                    setTimeout(type, 250);
+                    return;
+                }
+
+                setTimeout(type, deleteSpeed);
+            };
+
+            type();
         }
-
-        type(); // Start the typing effect
-    } else {
-        console.warn("Element with ID 'typing-text' not found. Typing effect will not run.");
     }
 
-
-    // --- Hamburger Menu Functionality ---
     const hamburgerMenu = document.querySelector('.hamburger-menu');
     const navLinks = document.querySelector('.nav-links');
+    const navAnchors = document.querySelectorAll('.nav-links a');
 
     if (hamburgerMenu && navLinks) {
+        const closeMenu = () => {
+            navLinks.classList.remove('active');
+            hamburgerMenu.setAttribute('aria-expanded', 'false');
+            document.body.classList.remove('menu-open');
+        };
+
         hamburgerMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+            const isOpen = navLinks.classList.toggle('active');
+            hamburgerMenu.setAttribute('aria-expanded', String(isOpen));
+            document.body.classList.toggle('menu-open', isOpen);
         });
 
-        // Close the nav menu when a link is clicked (optional but good UX)
-        navLinks.querySelectorAll('a').forEach(link => {
+        navAnchors.forEach((link) => {
             link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
+                closeMenu();
             });
         });
-    } else {
-        console.warn("Hamburger menu or navigation links not found. Mobile menu functionality will not work.");
+
+        document.addEventListener('click', (event) => {
+            const clickedOutside =
+                !navLinks.contains(event.target) &&
+                !hamburgerMenu.contains(event.target);
+
+            if (clickedOutside) {
+                closeMenu();
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeMenu();
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 840) {
+                closeMenu();
+            }
+        });
+    }
+
+    const sections = document.querySelectorAll('section[id]');
+
+    const setActiveNav = () => {
+        const scrollPosition = window.scrollY + 130;
+
+        sections.forEach((section) => {
+            const id = section.getAttribute('id');
+            const targetLink = document.querySelector(`.nav-links a[href="#${id}"]`);
+
+            if (!targetLink) return;
+
+            const isInSection =
+                scrollPosition >= section.offsetTop &&
+                scrollPosition < section.offsetTop + section.offsetHeight;
+
+            targetLink.classList.toggle('active', isInSection);
+        });
+    };
+
+    setActiveNav();
+    window.addEventListener('scroll', setActiveNav, { passive: true });
+
+    const year = document.getElementById('year');
+    if (year) {
+        year.textContent = new Date().getFullYear();
     }
 });

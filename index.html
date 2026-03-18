@@ -3,195 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Felix-Adewale Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Felix Adewale | Full-Stack Developer</title>
+    <meta name="description" content="Portfolio of Felix Adewale, a full-stack developer building scalable web products across healthcare, commerce, and operations.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="animation.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <script src="app.js" defer></script>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <a href="#" class="logo" style="--1: 1">Felix<span> Adewale</span></a>
+    <header class="site-header">
+        <nav class="navbar container">
+            <a href="#home" class="logo" style="--i: 1">Felix <span>Adewale</span></a>
 
-            <div class="hamburger-menu">
+            <button class="hamburger-menu" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
                 <i class="fa-solid fa-bars"></i>
-            </div>
+            </button>
 
-            <ul class="nav-links">
-                <li><a href="#" class="active" style="--1: 2">Home</a></li>
-                <li><a href="#" style="--1: 3">About</a></li>
-                <li><a href="#" style="--1: 4">Skills</a></li>
-                <li><a href="#" style="--1: 5">Services</a></li>
-                <li><a href="#" style="--1: 6">Portfolio</a></li>
-                <li><a href="#" style="--1: 7">Contact</a></li>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="active" style="--i: 2">Home</a></li>
+                <li><a href="#about" style="--i: 3">About</a></li>
+                <li><a href="#skills" style="--i: 4">Skills</a></li>
+                <li><a href="#portfolio" style="--i: 5">Projects</a></li>
+                <li><a href="#contact" style="--i: 6">Contact</a></li>
             </ul>
 
-            <a href="assets/cv/🌐 Felix Funmibi Adewale Web Developer's Portfolio.docx" target="_blank" class="cvbtn" style="--1:8">Download CV<i class="fa-solid fa-download"></i></a>
+            <a href="assets/cv/Felix-Adewale-CV.docx" target="_blank" rel="noopener" class="cvbtn" style="--i: 7">
+                CV <i class="fa-solid fa-download"></i>
+            </a>
         </nav>
     </header>
 
-    <section id="home" class="hero-container">
-        <div class="hero-image hero-image-animation">
-            <img src="./assets/images/felix.jpg" alt="Felix Adewale">
-        </div>
-
-        <div class="hero-content hero-content-animation">
-            <h3 style="--1:1">Hello, I'm </h3>
-            <h1 style="--1:2">Felix F. Adewale</h1>
-            <h2 style="--1:3">And I'm a <span id="typing-text"></span></h2>
-            <p style="--1:4">Transforming ideas into dynamic, database-driven web applications. I am a highly skilled Full-Stack Web Developer, adept in both backend and frontend technologies.</p>
-
-            <div class="social-icons" style="--1:5">
-                <a href=""><i class="fa-brands fa-square-facebook"></i></a>
-                <a href=""><i class="fa-brands fa-square-twitter"></i></a>
-                <a href=""><i class="fa-brands fa-square-instagram"></i></a>
-                <a href=""><i class="fa-brands fa-linkedin"></i></a> </div>
-            
-            <div class="hero-btn" style="--1:6">
-                <a href="" class="btn">Hire Me</a>
-                <a href="" class="btn">Contact Me</a>
+    <main>
+        <section id="home" class="hero container">
+            <div class="hero-image hero-image-animation reveal" style="--delay: .1s">
+                <img src="assets/images/felix.jpg" alt="Portrait of Felix Adewale">
             </div>
-        </div>
-    </section>
 
-    <section class="stats stats-animation">
-        <div class="stat">
-            <h2>10+</h2>
-            <span>Years of<br> Experience</span>
-        </div>
-        <div class="stat">
-            <h2>5+</h2>
-            <span>Projects <br>completed</span>
-        </div>
-        <div class="stat">
-            <h2>7+</h2>
-            <span>Technologies <br>Mastered</span>
-        </div>
-        <div class="stat">
-            <h2>100+</h2>
-            <span>Satisfied <br>Clients</span>
-        </div>
-    </section>
-    <!-- cont'd  -->
-         <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
+            <div class="hero-content hero-content-animation">
+                <p class="eyebrow reveal" style="--delay: .2s">Full-Stack Web Developer</p>
+                <h1 class="reveal" style="--delay: .3s">Building reliable products that teams can actually run.</h1>
+                <h2 class="reveal" style="--delay: .4s">I build <span id="typing-text"></span></h2>
+                <p class="lead reveal" style="--delay: .5s">
+                    I design and ship database-driven applications across healthcare, operations, education, and e-commerce with a focus on performance, clean APIs, and maintainable code.
+                </p>
+
+                <div class="social-icons reveal" style="--delay: .6s">
+                    <a href="mailto:you@example.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/afunmibi" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                </div>
+
+                <div class="hero-btn reveal" style="--delay: .7s">
+                    <a href="#portfolio" class="btn">View Projects</a>
+                    <a href="#contact" class="btn btn-outline">Hire Me</a>
+                    <a href="https://github.com/afunmibi" target="_blank" rel="noopener" class="btn btn-outline">GitHub Repo</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats container stats-animation reveal" style="--delay: .2s">
+            <article class="stat">
+                <h3>10+</h3>
+                <p>Years Experience</p>
+            </article>
+            <article class="stat">
+                <h3>15+</h3>
+                <p>Projects Delivered</p>
+            </article>
+            <article class="stat">
+                <h3>7+</h3>
+                <p>Core Technologies</p>
+            </article>
+            <article class="stat">
+                <h3>100+</h3>
+                <p>Happy Users</p>
+            </article>
+        </section>
+
+        <section id="about" class="section container reveal" style="--delay: .1s">
             <h2>About Me</h2>
             <p>
-                I’m <strong>Felix Adewale</strong>, a Full-Stack Web Developer with expertise in 
-                <strong>PHP, MySQL, JavaScript, React, Bootstrap, Tailwind,Laravel, and API Development</strong>. 
-                I specialize in building scalable applications for healthcare, education, and e-commerce. 
-                With a strong background in database-driven API enpoint systems, I focus on creating solutions that are both functional and user-friendly.
+                I am <strong>Felix Adewale</strong>, a full-stack developer with strong experience in Laravel, React, PHP, JavaScript, MySQL, and API-driven platforms.
+                I focus on business systems that need dependable performance and clear workflows, especially in healthcare and operations-heavy environments.
             </p>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2>Skills & Tech Stack</h2>
-            <div class="skills-grid">
-                <div class="skill"><i class="fa-brands fa-html5"></i> HTML5</div>
-                <div class="skill"><i class="fa-brands fa-css3-alt"></i> CSS3 / Bootstrap / Tailwind</div>
-                <div class="skill"><i class="fa-brands fa-js"></i> JavaScript / jQuery</div>
-                <div class="skill"><i class="fa-brands fa-php"></i> PHP (Procedural)</div>
-                <div class="skill"><i class="fa-solid fa-database"></i> MySQL / Database Design</div>
-                <div class="skill"><i class="fa-brands fa-react"></i> React</div>
-                <div class="skill"><i class="fa-solid fa-lock"></i> Laravel/ Auth & API Development</div>
-                <div class="skill"><i class="fa-solid fa-file-pdf"></i> PDF/Excel Generation</div>
+        <section id="skills" class="section section-muted reveal" style="--delay: .1s">
+            <div class="container">
+                <h2>Skills & Stack</h2>
+                <div class="skills-grid">
+                    <div class="skill"><i class="fa-solid fa-lock"></i> Laravel Auth + API Development</div>
+                    <div class="skill"><i class="fa-brands fa-react"></i> React + Component Architecture</div>
+                    <div class="skill"><i class="fa-brands fa-js"></i> JavaScript + jQuery</div>
+                    <div class="skill"><i class="fa-brands fa-php"></i> PHP + Backend Logic</div>
+                    <div class="skill"><i class="fa-solid fa-database"></i> MySQL + Data Modeling</div>
+                    <div class="skill"><i class="fa-brands fa-css3-alt"></i> CSS, Tailwind, Bootstrap</div>
+                    <div class="skill"><i class="fa-solid fa-file-pdf"></i> PDF + Excel Reporting</div>
+                    <div class="skill"><i class="fa-solid fa-server"></i> Deployment + Maintenance</div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <h2>My Projects</h2>
+        <section id="portfolio" class="section container">
+            <h2>Selected Projects</h2>
             <div class="portfolio-grid">
-                <div class="project-card">
-                    <img src="./assets/images/ecommerce.jpg" alt="E-commerce Website">
-                    <h3>E-commerce Website</h3>
-                    <p>Online store with admin dashboard, cart system, and WhatsApp integration.</p>
-                </div>
-                <div class="project-card">
-                    <img src="./assets/images/school.jpg" alt="School Management System">
-                    <h3>School Management System</h3>
-                    <p>Student registration, PDF generation, teacher dashboard, results management.</p>
-                </div>
-                <div class="project-card">
-                    <img src="./assets/images/hmo.png" alt="HMO Healthcare Portal">
-                    <h3>HMO Healthcare Portal</h3>
-                    <p>Hospital PA code, claims vetting, NHIA tariff integration.</p>
-                </div>
-                <div class="project-card">
-                    <img src="./assets/images/sales.jpg" alt="Supermarket Sales App">
-                    <h3>Supermarket Sales Web App</h3>
-                    <p>Daily summary, sales by cashier, PDF/Excel export reports.</p>
-                </div>
-                <div class="project-card">
-                    <img src="./assets/images/invoice.jpg" alt="Invoice Generator">
-                    <h3>Invoice Generator</h3>
-                    <p>API-driven invoicing system with authentication and PDF download.</p>
-                </div>
-                <div class="project-card">
-                    <img src="./assets/images/retiree.jpg" alt="Retiree Verification System">
-                    <h3>Retiree Verification System</h3>
-                    <p>Biometric + webcam verification with login & attendance tracking.</p>
-                </div>
+                <article class="project-card reveal" style="--delay: .1s">
+                    <img src="assets/images/cosmic.png" alt="E-commerce interface preview">
+                    <div class="project-body">
+                        <h3>E-commerce Platform</h3>
+                        <p>Online storefront with product management, checkout flow, and operations dashboard.</p>
+                        <p class="tech">Laravel, React, Bootstrap, Tailwind</p>
+                    </div>
+                </article>
+
+                <article class="project-card reveal" style="--delay: .2s">
+                    <img src="assets/images/hmo.png" alt="HMO healthcare portal preview">
+                    <div class="project-body">
+                        <h3>HMO Healthcare Portal</h3>
+                        <p>Claims vetting and tariff workflows built for healthcare provider operations.</p>
+                        <p class="tech">PHP, MySQL, JavaScript</p>
+                        <video controls preload="metadata">
+                            <source src="assets/videos/Nonsuch portal demo.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </article>
+
+                <article class="project-card reveal" style="--delay: .3s">
+                    <img src="assets/images/Microsoft Game DVR - Supermarket Sales System - Google Chrome - VLC media player 2_23_2026 11_55_02 AM.png" alt="Supermarket sales web app preview">
+                    <div class="project-body">
+                        <h3>Supermarket Sales Web App</h3>
+                        <p>Cashier-focused sales tracking with daily summaries and downloadable reports.</p>
+                        <p class="tech">PHP, MySQL, Bootstrap</p>
+                        <video controls preload="metadata">
+                            <source src="assets/videos/Supermarket Sales System - Google Chrome 2025-04-24 10-54-55.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </article>
+
+                <article class="project-card reveal" style="--delay: .4s">
+                    <img src="assets/images/Divine-Love Bags - Login - Google Chrome - VLC media player 2_23_2026 11_41_20 AM.png" alt="Invoice system preview">
+                    <div class="project-body">
+                        <h3>Invoice Generator</h3>
+                        <p>Authentication-enabled invoice workflow with export-ready document generation.</p>
+                        <p class="tech">PHP, API Integration, PDF Export</p>
+                        <video controls preload="metadata">
+                            <source src="assets/videos/Divine-Love Bags - Login - Google Chrome 2025-08-23 15-38-43.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </article>
+
+                <article class="project-card reveal" style="--delay: .5s">
+                    <img src="assets/images/nonsuch20261.png" alt="ERP dashboard preview">
+                    <div class="project-body">
+                        <h3>HMO ERP System</h3>
+                        <p>Internal healthcare ERP workflows connecting operations, finance, and records.</p>
+                        <p class="tech">Laravel, Blade, Tailwind</p>
+                        <video controls preload="metadata">
+                            <source src="assets/videos/nonsuch20262.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </article>
+
+                <article class="project-card reveal" style="--delay: .6s">
+                    <img src="assets/images/nonsuch20262.png" alt="Health product preview">
+                    <div class="project-body">
+                        <h3>Health Nugget</h3>
+                        <p>Public-facing health application interface with modern responsive UI patterns.</p>
+                        <p class="tech">React, Tailwind, Firebase</p>
+                        <video controls preload="metadata">
+                            <source src="assets/videos/Health Nugget Ilare - Google Chrome 2026-02-22 16-29-55.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </article>
             </div>
-        </div>
-    </section>
-    <!-- Contact Section -->
-<section id="contact" class="py-20 bg-gray-50">
-  <div class="max-w-4xl mx-auto text-center">
-    <h2 class="text-3xl font-bold text-gray-800 mb-6">Contact Me</h2>
-    <p class="text-gray-600 mb-8">Have a project idea or want to work together? Send me a message.</p>
+        </section>
 
-    <form action="https://formspree.io/f/mpwyodkz" method="POST" class="space-y-6">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- Name -->
-        <input 
-          type="text" 
-          name="name" 
-          placeholder="Your Name" 
-          class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          required
-        />
-        <!-- Email -->
-        <input 
-          type="email" 
-          name="email" 
-          placeholder="Your Email" 
-          class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          required
-        />
-      </div>
+        <section id="contact" class="section section-muted">
+            <div class="container contact-wrap reveal" style="--delay: .15s">
+                <h2>Contact Me</h2>
+                <p>Have a project or role in mind? Send a message and I will respond.</p>
 
-      <!-- Message -->
-      <textarea 
-        name="message" 
-        rows="5" 
-        placeholder="Your Message" 
-        class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-        required
-      ></textarea>
+                <form action="https://formspree.io/f/mpwyodkz" method="POST" class="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
 
-      <!-- Submit Button -->
-      <button 
-        type="submit" 
-        class="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition"
-      >
-        Send Message
-      </button>
-    </form>
-  </div>
-</section>
-
-<footer class='footer'>
-<p>Felix-Adewale &copy All right reserved</p>
-</footer>
+    <footer class="footer">
+        <p>Felix Adewale <span id="year"></span>. All rights reserved.</p>
+    </footer>
 </body>
 </html>
+
+
